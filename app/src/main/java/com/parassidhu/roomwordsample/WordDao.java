@@ -1,5 +1,6 @@
 package com.parassidhu.roomwordsample;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
@@ -16,5 +17,5 @@ public interface WordDao {
     void deleteAll(Word word);
 
     @Query("SELECT * FROM word_table ORDER BY word ASC")
-    List<Word> getAllWords();
+    LiveData<List<Word>> getAllWords();
 }
