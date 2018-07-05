@@ -5,6 +5,9 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
+import com.parassidhu.roomwordsample.database.WordRepository;
+import com.parassidhu.roomwordsample.models.Word;
+
 import java.util.List;
 
 public class WordViewModel extends AndroidViewModel {
@@ -18,7 +21,7 @@ public class WordViewModel extends AndroidViewModel {
         mAllWords = mRepository.getAllWords();
     }
 
-    LiveData<List<Word>> getAllWords() { return mAllWords; }
+    public LiveData<List<Word>> getAllWords() { return mAllWords; }
 
     public void insert(Word word){ mRepository.insert(word);}
 }
